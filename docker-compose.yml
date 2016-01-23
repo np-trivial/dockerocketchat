@@ -24,18 +24,18 @@ rocketchatserver:
 #    - ./uploads:/app/uploads
     - /app/uploads
   environment:
-    #- PORT=3000
-    - PORT=443
+  # this is what port rocketchat will listen on
+    - PORT=3000
     # change to be your frontend URL to your TLS frontend
     - ROOT_URL=https://localhost
     - MONGO_URL=mongodb://mongo:27017/rocketchat
-    # you'll probably want this
+    # you'll probably want this for e-mail password resets, etc.
     #- MAIL_URL = 
   links:
-  - mongo
+    - mongo
 # Don't need this since we're front-ending with nginx
-#  ports:
-#    - 3000:3000
+  ports:
+    - 3000:3000
 
 # hubot, the popular chatbot (add the bot user first and change the password before starting this image)
 hubot:
