@@ -34,8 +34,8 @@ rocketchatserver:
   links:
     - mongo
 # Don't need this since we're front-ending with nginx
-  ports:
-    - 3000:3000
+#  ports:
+#    - 3000:3000
 
 # hubot, the popular chatbot (add the bot user first and change the password before starting this image)
 hubot:
